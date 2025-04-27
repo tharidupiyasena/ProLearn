@@ -208,7 +208,7 @@ public class PostController {
         post.setComments(comments);
         
         // Save the updated post
-        Post updatedPost = postRepository.save(post);
+        Post updatedPost  = postRepository.save(post);
         logger.info("Comment {} deleted from post: {}", commentId, postId);
         
         Map<String, Object> response = new HashMap<>();
@@ -230,9 +230,9 @@ public class PostController {
             .orElseThrow(() -> new RuntimeException("Post not found"));
         
         Set<String> likes = post.getLikes();
-        String userId = currentUser.getId();
+        String userId  = currentUser.getId();
         
-        boolean liked = false;
+        boolean liked  = false;
         
         // Toggle like status
         if (likes.contains(userId)) {
@@ -310,7 +310,7 @@ public class PostController {
             .createdAt(LocalDateTime.now())
             .build();
         
-        List<Post.Comment> comments = post.getComments();
+        List<Post.Comment> comments  = post.getComments();
         comments.add(comment);
         post.setComments(comments);
         
