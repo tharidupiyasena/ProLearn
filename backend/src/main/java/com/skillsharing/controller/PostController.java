@@ -161,7 +161,7 @@ public class PostController {
             }
         }
         
-        // Delete the post itself
+        // Deleteitself
         postRepository.delete(post);
         logger.info("Post deleted: {}", postId);
         
@@ -185,8 +185,8 @@ public class PostController {
         Post post = postRepository.findById(postId)
             .orElseThrow(() -> new RuntimeException("Post not found"));
         
-        // Find the comment to delete
-        Optional<Post.Comment> commentOpt = post.getComments().stream()
+        // find comment delete
+        Optional<Post.Comment> commentOpt  = post.getComments().stream()
             .filter(c -> c.getId().equals(commentId))
             .findFirst();
         
@@ -202,13 +202,13 @@ public class PostController {
             return ResponseEntity.status(403).body("You are not authorized to delete this comment");
         }
         
-        // Remove the comment
+        // Remove comment
         List<Post.Comment> comments = new ArrayList<>(post.getComments());
         comments.removeIf(c -> c.getId().equals(commentId));
         post.setComments(comments);
         
         // Save the updated post
-        Post updatedPost = postRepository.save(post);
+        Post updatedPost  = postRepository.save(post);
         logger.info("Comment {} deleted from post: {}", commentId, postId);
         
         Map<String, Object> response = new HashMap<>();
@@ -230,9 +230,9 @@ public class PostController {
             .orElseThrow(() -> new RuntimeException("Post not found"));
         
         Set<String> likes = post.getLikes();
-        String userId = currentUser.getId();
+        String userId  = currentUser.getId();
         
-        boolean liked = false;
+        boolean liked  = false;
         
         // Toggle like status
         if (likes.contains(userId)) {
@@ -310,7 +310,7 @@ public class PostController {
             .createdAt(LocalDateTime.now())
             .build();
         
-        List<Post.Comment> comments = post.getComments();
+        List<Post.Comment> comments  = post.getComments();
         comments.add(comment);
         post.setComments(comments);
         
