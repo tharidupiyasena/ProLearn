@@ -94,10 +94,14 @@ public class MessagingController {
         String currentUserEmail = authentication.getName();
         
         Optional<User> currentUserOpt = userRepository.findByEmail(currentUserEmail);
+
+
         
         if (currentUserOpt.isEmpty()) {
             return ResponseEntity.badRequest().body("User not found");
         }
+
+        
         
         User currentUser = currentUserOpt.get();
         

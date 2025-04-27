@@ -161,7 +161,7 @@ public class PostController {
             }
         }
         
-        // Delete the post itself
+        // Deleteitself
         postRepository.delete(post);
         logger.info("Post deleted: {}", postId);
         
