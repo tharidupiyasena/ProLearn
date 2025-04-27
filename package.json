@@ -1,0 +1,25 @@
+{
+  "name": "prolearn",
+  "version": "1.0.0",
+  "description": "A modern web application that facilitates knowledge exchange and learning in the developer community.",
+  "main": "index.js",
+  "scripts": {
+   
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tharidupiyasena/ProLearn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tharidupiyasena/ProLearn/issues"
+  },
+  "homepage": "https://github.com/tharidupiyasena/ProLearn#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}
