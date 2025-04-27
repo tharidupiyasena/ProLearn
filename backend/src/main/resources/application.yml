@@ -1,8 +1,10 @@
-spring:
-  data:
-    mongodb:
-      uri: mongodb+srv://piyasenashtp1:hSz3QZg4vQEDjpac@cluster0.y3o83eu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-      database: prolearn
+# spring:
+#   data:
+#     mongodb:
+#       uri: mongodb+srv://root:1234@cluster0.hl25lbt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+#       database: prolearn
+spring.data.mongodb.uri=mongodb://localhost:27017/prolearn
+
   # security:
   #   jwt:
   #     secret: 5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437
