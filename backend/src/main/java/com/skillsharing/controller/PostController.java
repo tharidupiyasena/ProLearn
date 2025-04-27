@@ -185,8 +185,8 @@ public class PostController {
         Post post = postRepository.findById(postId)
             .orElseThrow(() -> new RuntimeException("Post not found"));
         
-        // Find the comment to delete
-        Optional<Post.Comment> commentOpt = post.getComments().stream()
+        // find comment delete
+        Optional<Post.Comment> commentOpt  = post.getComments().stream()
             .filter(c -> c.getId().equals(commentId))
             .findFirst();
         
@@ -202,7 +202,7 @@ public class PostController {
             return ResponseEntity.status(403).body("You are not authorized to delete this comment");
         }
         
-        // Remove the comment
+        // Remove comment
         List<Post.Comment> comments = new ArrayList<>(post.getComments());
         comments.removeIf(c -> c.getId().equals(commentId));
         post.setComments(comments);
